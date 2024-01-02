@@ -26,8 +26,22 @@ export function ContactUs() {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
+  const [validationError, setValidationError] = useState("");
 
   const handleSubmit = () => {
+    if (
+      !studentName ||
+      !fatherName ||
+      !motherName ||
+      !classOfRegisteration ||
+      !residence ||
+      !gender ||
+      !phoneNumber
+    ) {
+      setValidationError("Please fill in all required fields.");
+      return;
+    }
+
     // Log the values in the console
     console.log("Student's Name:", studentName);
     console.log("Father's Name:", fatherName);
@@ -67,7 +81,7 @@ export function ContactUs() {
                 </p>
               </Link>
               &nbsp;&nbsp;
-              <p className="tracking-wide text-sm cairo text-black">></p>
+              <p className="tracking-wide text-sm cairo text-black">&lt;</p>
               &nbsp;&nbsp;
               <Link
                 href="/contactus"
@@ -210,7 +224,7 @@ export function ContactUs() {
                   value={studentName}
                   onChange={(e) => setStudentName(e.target.value)}
                   onClear={() => setStudentName("")}
-                  placeholder="Enter Student's Name here"
+                  label="Enter Student's Name here"
                 />
               </div>
               <div className="w-3/4  flex flex-col justify-items-center">
@@ -228,7 +242,7 @@ export function ContactUs() {
                   value={fatherName}
                   onChange={(e) => setFatherName(e.target.value)}
                   onClear={() => setFatherName("")}
-                  placeholder="Enter Father's Name here"
+                  label="Enter Father's Name here"
                 />
               </div>
               <div className="w-3/4 flex flex-col justify-items-center">
@@ -246,7 +260,7 @@ export function ContactUs() {
                   value={motherName}
                   onChange={(e) => setMotherName(e.target.value)}
                   onClear={() => setMotherName("")}
-                  placeholder="Enter Mother's Name here"
+                  label="Enter Mother's Name here"
                 />
               </div>
               <div className="w-3/4 flex flex-col justify-items-center">
@@ -264,7 +278,7 @@ export function ContactUs() {
                   value={classOfRegisteration}
                   onChange={(e) => setClassOfRegisteration(e.target.value)}
                   onClear={() => setClassOfRegisteration("")}
-                  placeholder="Enter Class for Registeration here"
+                  label="Enter Class for Registeration here"
                 />
               </div>
               <div className="w-3/4 flex flex-col justify-items-center">
@@ -280,7 +294,8 @@ export function ContactUs() {
                   value={residence}
                   onChange={(e) => setResidence(e.target.value)}
                   onClear={() => setResidence("")}
-                  placeholder="Enter Residence here"
+                  // placeholder="Enter Residence here"
+                  label="Enter Residence here"
                 />
               </div>
 
@@ -297,7 +312,7 @@ export function ContactUs() {
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
                   onClear={() => setGender("")}
-                  placeholder="Enter Gender here"
+                  label="Enter Gender here"
                 />
               </div>
 
@@ -314,13 +329,13 @@ export function ContactUs() {
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   onClear={() => setPhoneNumber("")}
-                  placeholder="Enter Phone Number here"
+                  label="Enter Phone Number here"
                 />
               </div>
 
               <div className="w-2/12 mt-6 mb-10 flex flex-row justify-center items-center">
                 <Button
-                  className="bg-gradient-to-tr from-[#27384B] to-[#507FBE] text-white shadow-lg"
+                  className="bg-gradient-to-tr from-[#27384B] to-[#507FBE] text-white shadow-xl rounded shadow-slate-400"
                   size="md"
                   fullWidth={true}
                   radius="none"
@@ -338,19 +353,28 @@ export function ContactUs() {
                   {(onClose) => (
                     <>
                       <ModalHeader className="flex flex-col gap-1 justify-center items-center text-xl ciaro">
-                        Form Successfully Submitted
+                        {validationError
+                          ? "Validation Error"
+                          : "Form Successfully Submitted"}
                       </ModalHeader>
                       <ModalBody>
-                        <p className="ciaro text-lg">
-                          Thanks for submitting the form. We will get back to
-                          you soon.
-                        </p>
+                        {validationError ? (
+                          <p className="ciaro text-lg">{validationError}</p>
+                        ) : (
+                          <p className="ciaro text-lg">
+                            Thanks for submitting the form. We will get back to
+                            you soon.
+                          </p>
+                        )}
                       </ModalBody>
                       <ModalFooter className="flex flex-row justify-center items-center">
                         <Button
-                          color="danger"
+                          color={validationError ? "danger" : "primary"}
                           variant="light"
-                          onPress={onClose}
+                          onPress={() => {
+                            onClose();
+                            setValidationError("");
+                          }}
                         >
                           Close
                         </Button>

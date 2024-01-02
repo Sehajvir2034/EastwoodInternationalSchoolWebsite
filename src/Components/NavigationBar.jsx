@@ -53,7 +53,7 @@ const NavigationBar = () => {
   return (
     <>
       <ScrollComponent />
-      <div className="hidden sm:flex  justify-center items-end bg-white pt-4 pb-3 w-full">
+      <div className="hidden sm:flex justify-center items-end bg-white pt-4 pb-3 w-full">
         <SchoolLogo height={100} width={100} />
         <div className="flex flex-col justify-center items-center">
           <p className=" text-red-600 font-ltc-bodoni-175 text-base ">
@@ -73,7 +73,7 @@ const NavigationBar = () => {
         maxWidth="full"
         className=" bg-[#27384B]  cairo font-thin"
       >
-        <NavbarContent className="sm:hidden" justify="start">
+        <NavbarContent className="sm:hidden md:flex lg:hidden" justify="start">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className=" text-white "
