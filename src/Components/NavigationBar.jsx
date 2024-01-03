@@ -178,11 +178,11 @@ const NavigationBar = () => {
                 >
                   <Link
                     className={`text-base text-white hover:text-white ${
-                      location.pathname === "/infolink"
+                      location.pathname === "/infolinkhomepage"
                         ? " border-white border-b-1 pb-1 pt-1"
                         : "border-[#27384B] border-b-1 pb-1 pt-1"
                     }`}
-                    href="/infolink"
+                    href="/infolinkhomepage"
                   >
                     Info-Link
                   </Link>
@@ -190,19 +190,20 @@ const NavigationBar = () => {
               </DropdownTrigger>
             </NavbarItem>
             <DropdownMenu
-              aria-label="ACME features"
-              className="w-full bg-red-400 rounded-lg"
+              className=" bg-white rounded-sm w-full"
               color="default"
               variant="light"
-              // itemClasses={{
-              //   base: "gap-4",
-              // }}
             >
-              <DropdownItem textValue="ff" key="autoscaling" showDivider={true}>
+              <DropdownItem key="schoolInfo" showDivider={true}>
                 <p className="ciaro font-light text-base">School Information</p>
               </DropdownItem>
 
-              <DropdownItem key="usage_metrics" showDivider={true}>
+              <DropdownItem key="trusteeInfo" showDivider={true}>
+                <p className="ciaro font-light text-base">
+                  Trustee Information
+                </p>
+              </DropdownItem>
+              <DropdownItem key="trusteeInfo" showDivider={true}>
                 <p className="ciaro font-light text-base">
                   Trustee Information
                 </p>

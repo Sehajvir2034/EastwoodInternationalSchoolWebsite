@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./Components/Home";
 import { About } from "./Components/About";
 import { ContactUs } from "./Components/ContactUs";
+import { InfoLinkHomepage } from "./Components/InfoLinkHomepage";
 import { NextUIProvider } from "@nextui-org/react";
 import "./App.css";
 
@@ -13,6 +14,7 @@ const App = () => {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/infolinkhomepage" element={<InfoLinkHomepage />} />
           <Route path="/contactus" element={<ContactUs />} />
 
           <Route path="*" element={<Home />} />

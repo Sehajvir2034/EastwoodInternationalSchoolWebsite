@@ -95,7 +95,7 @@ export function ContactUs() {
 
             <div className="flex flex-row w-full justify-center items-center ">
               <hr className=" flex flex-row w-10 bg-[#27384B] h-0.5" />
-              <p className="text-4xl font-ltc-bodoni-175 text-[#27384B]">
+              <p className="tracking-wide  text-4xl cairo text-[#27384B]">
                 &nbsp;&nbsp;Contact Us&nbsp;&nbsp;
               </p>
               <hr className="flex flex-row w-10 bg-[#27384B] h-0.5" />
@@ -106,7 +106,7 @@ export function ContactUs() {
                 <p className="invisible">i</p>
               </div>
               <div className="text-black hover:text-black">
-                <p className="text-white tracking-wider text-xl pl-2">
+                <p className="cairo text-xl text-white tracking-wider pl-2">
                   School Address:
                 </p>
               </div>
@@ -139,7 +139,7 @@ export function ContactUs() {
                 <p className="invisible">i</p>
               </div>
               <div className="text-black hover:text-black">
-                <p className="text-white  tracking-wider  text-xl pl-2">
+                <p className="cairo text-xl text-white tracking-wider pl-2">
                   For General Queries:
                 </p>
               </div>
@@ -163,7 +163,7 @@ export function ContactUs() {
                 <p className="invisible">i</p>
               </div>
               <div className="text-black hover:text-black">
-                <p className="text-white tracking-wider text-xl pl-2">
+                <p className="cairo text-xl text-white tracking-wider pl-2">
                   Admission Inquiries:
                 </p>
               </div>
@@ -189,7 +189,7 @@ export function ContactUs() {
                 <p className="invisible">i</p>
               </div>
               <div className="text-black hover:text-black">
-                <p className="text-white tracking-wider text-xl pl-2">
+                <p className="cairo text-xl text-white tracking-wider pl-2">
                   Phone Numbers:
                 </p>
               </div>
@@ -202,7 +202,7 @@ export function ContactUs() {
 
             <div className="flex flex-row w-full justify-center items-center ">
               <hr className=" flex flex-row w-10 bg-[#27384B] h-0.5" />
-              <p className="text-4xl font-ltc-bodoni-175 text-[#27384B]">
+              <p className="text-4xl cairo text-[#27384B]">
                 &nbsp;&nbsp;Enquiry Form&nbsp;&nbsp;
               </p>
               <hr className="flex flex-row w-10 bg-[#27384B] h-0.5" />
